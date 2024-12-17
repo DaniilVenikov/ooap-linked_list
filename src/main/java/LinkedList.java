@@ -25,13 +25,8 @@ public abstract class LinkedList<T> {
     public static int REMOVE_OK = 1;
     public static int REMOVE_ERR = 2;
 
-    public static int ADD_TO_EMPTY_NIL = 0;
     public static int ADD_TO_EMPTY_OK = 1;
     public static int ADD_TO_EMPTY_ERR = 2;
-
-    public static int ADD_TAIL_NIL = 0;
-    public static int ADD_TAIL_OK = 1;
-    public static int ADD_TAIL_ERR = 2;
 
     public static int REPLACE_NIL = 0;
     public static int REPLACE_OK = 1;
@@ -40,10 +35,6 @@ public abstract class LinkedList<T> {
     public static int FIND_NIL = 0;
     public static int FIND_OK = 1;
     public static int FIND_ERR = 2;
-
-    public static int REMOVE_ALL_NIL = 0;
-    public static int REMOVE_ALL_OK = 1;
-    public static int REMOVE_ALL_ERR = 2;
 
     public static int GET_NIL = 0;
     public static int GET_OK = 1;
@@ -87,7 +78,6 @@ public abstract class LinkedList<T> {
     //постусловие: в список добавлен первый элемент
     public abstract void addToEmpty(T value);
 
-    //предусловие: список не пустой
     //постусловие: добавлен новый узел в конец списка
     public abstract void addTail(T value);
 
@@ -95,11 +85,9 @@ public abstract class LinkedList<T> {
     //постусловие: значение текущего узла заменено на заданное
     public abstract void replace(T value);
 
-    //предусловие: в списке есть узел с искомым значением
-    //постусловие: курсор установлен на узел с переданным значением
+    //постусловие: курсор установлен на следующий узел с искомым значением, если такой узел найден
     public abstract void find(T value);
 
-    //предусловие: в списке есть узел с искомым значением
     //постусловие: из списка удаляться все узлы с заданным значением
     public abstract void removeAll(T value);
 
@@ -122,10 +110,8 @@ public abstract class LinkedList<T> {
     public abstract int getPutLeftStatus();
     public abstract int getRemoveStatus();
     public abstract int getAddToEmptyStatus();
-    public abstract int getAddTailStatus();
     public abstract int getReplaceStatus();
     public abstract int getFindStatus();
-    public abstract int getRemoveAllStatus();
     public abstract int getGetStatus();
 }
 
